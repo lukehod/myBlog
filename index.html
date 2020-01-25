@@ -1,0 +1,62 @@
+---
+layout: page
+---
+{% for post in paginator.posts %}
+  <!-- Card -->
+  <article class="w3-card-4 w3-margin w3-white">
+    <!-- Card image -->
+    <img src="{{ site.baseurl }}{{ site.post_image_dir }}{{ post.image | default: "default.jpg" }}" style="width:100%" class="w3-image w3-grayscale-min">
+
+    <!-- Title -->
+    <div class="w3-container w3-center">
+      <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
+      <div class="date">
+        Posted on: {{ post.date | date: "%B %e, %Y" }}
+      </div>
+      <hr>
+    </div>
+
+    <!-- Excerpt -->
+    <div class="w3-container">
+      <p>{{ post.excerpt }}</p>
+      <div class="w3-row">
+        <div class="w3-col">
+          <p><a href="{{ site.baseurl }}{{ post.url }}"
+                class="w3-button w3-padding-large w3-light-grey w3-border">
+            <b>READ MORE »</b></a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </article>
+  <hr>
+{% endfor %}
+
+<!-- Pagination links -->
+{% if paginator.total_pages > 1 %}
+<div class="w3-center">
+  <div class="w3-bar">
+    <!-- prev button -->
+    {% if paginator.previous_page %}
+      <a href="{{ paginator.previous_page_path | relative_url }}" class="w3-button">&laquo; Prev</a>
+    {% endif %}
+
+    <!-- page nums -->
+    {% for page in (1..paginator.total_pages) %}
+      {% if page == paginator.page %}
+        <em class="w3-button w3-grey w3-hover-grey">{{ page }}</em>
+      {% elsif page == 1 %}
+        <a href="{{ "/" | relative_url }}" class="w3-button">{{ page }}</a>
+      {% else %}
+        <a href="{{ site.paginate_path | relative_url | replace: ':num', page }}" class="w3-button">{{ page }}</a>
+      {% endif %}
+    {% endfor %}
+
+    <!-- next button -->
+    {% if paginator.next_page %}
+      <a href="{{ paginator.next_page_path | relative_url }}" class="w3-button">Next &raquo;</a>
+    {% endif %}
+  </div>
+</div>
+{% endif %}

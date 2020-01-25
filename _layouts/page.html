@@ -1,0 +1,18 @@
+---
+layout: default
+---
+<!-- Container wrapped around the whole page content -->
+<div class="w3-content w3-light-grey" style="max-width:1400px">
+  {% include nav.html %}    <!-- Navigation -->
+  {% include header.html %} <!-- Header -->
+
+  <div id="main" role="main" class="w3-row"> <!-- Content grid -->
+    <div class="w3-col m2 s1 w3-center w3-container"></div> <!-- Left col -->
+    <div class="w3-col m8 s10 w3-center">
+      {{ content }}
+    </div>
+    <div class="w3-col m2 s1 w3-center w3-container"></div> <!-- Right col -->
+  </div>
+
+  {% include footer.html %} <!-- Footer -->
+</div>

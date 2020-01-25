@@ -1,0 +1,16 @@
+<!-- Header -->
+<header class="w3-container w3-padding-32 header w3-white">
+  <!-- Nav Button -->
+  <div class="w3-display-topleft w3-padding-large w3-xlarge" onclick="openNav()">
+    <button class="w3-margin-top w3-button w3-black w3-xlarge">☰</button>
+  </div>
+  <div class="w3-container w3-center site-info">
+    <h1 class="site-name"><a href="{{ site.baseurl }}/">
+      <div id="typed-strings">
+        <p>&nbsp;{{ site.name }}</p> <!-- &nbsp; creates a space before the typed name so it stays centered with the cursor at the end -->
+      </div>
+      <span id="typed"></span>
+    </a></h1>
+    <p class="site-description">{{ site.description }}</p>
+  </div>
+</header>
