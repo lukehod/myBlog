@@ -196,17 +196,37 @@ img {
 //
 .post-header {
   font-family: $raleway;
-  padding: 0;
+  // padding: 0;
+  // text-shadow:1px 1px 0 #444;
+  // margin: 0;
 }
 
 .post-title {
-  padding: 0 20px 0 20px;
-  line-height: 35px;
+  padding: 0 40px 0 40px;
+  line-height: normal;
+  font-weight: normal;
+  //font-size: 40px;
+  color: $white;
+}
+
+.post-author {
+  font-style: italic;
+  color: $white;
+  font-size: 12px;
+  padding: 0 20px 20px 20px;
+  // // border-bottom: 1px solid $lightGray;
+  // margin-bottom: 40px;
+}
+
+.post-author a {
+  color: $white;
 }
 
 .header {
-  border-top: 1px solid #ddd;
-  border-bottom: 1px solid #ddd;
+  // border-top: 1px solid #ddd;
+  // border-bottom: 1px solid #ddd;
+  padding-top: 32px;
+  padding-bottom: 16px;
 }
 
 .posts > .post {
@@ -316,9 +336,9 @@ a.icon {
 // footer
 //
 .wrapper-footer {
-  margin-top: 50px;
-  border-top: 1px solid #ddd;
-  border-bottom: 1px solid #ddd;
+  margin-top: 0;
+  // border-top: 1px solid #ddd;
+  // border-bottom: 1px solid #ddd;
   background-color: $lightGray;
 }
 
@@ -377,6 +397,23 @@ footer {
 	min-height: 100vh;
 	background-position: center;
 	background-size: cover;
+}
+
+//
+// Preloader
+//
+.preloader {
+  align-items: center;
+  background: rgb(23, 22, 22);
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  left: 0;
+  position: fixed;
+  top: 0;
+  transition: opacity 0.3s linear;
+  width: 100%;
+  z-index: 9999;
 }
 
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */

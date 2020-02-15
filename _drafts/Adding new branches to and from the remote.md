@@ -8,12 +8,13 @@ image: rpi.jpg
 This is a guide for if you have created a branch on another machine or in the remote repository on Github and would like to get the branch on your local machine. In order to do so you need to create the new branch while setting it up to track the estabolished branch on github already.
 
 <!--more-->
+# Get a remote branch locally
 To start we want to ```git fetch origin``` to make sure we have the new branch recognized as a remote. You then want to use the command ```git checkout --track origin/newbranchname``` in order to create a new branch, have it track the remote branch, and switch to it all at once.
 
 REF: https://www.git-tower.com/learn/git/ebook/en/command-line/remote-repositories/inspecting-remote-data#start
 
 # Add a local branch to a remote
-If you have a banch locally you are ready to add to the remote, first switch to that branch using ```git checkout newbranchname```. You then can use the command ```git push -u origin newbranchname``` to tell git to push the local HEAD branch to the remote and make a tracking connection between them.
+If you have a branch locally you are ready to add to the remote, first switch to that branch using ```git checkout newbranchname```. You then can use the command ```git push -u origin newbranchname``` to tell git to push the local HEAD branch to the remote and make a tracking connection between them.
 
 REF: https://www.git-tower.com/learn/git/ebook/en/command-line/remote-repositories/publish-local-branch#start
 
