@@ -8,7 +8,7 @@ layout: page
     <div class="w3-display-middle w3-auto w3-border-top w3-border-bottom" style="background: rgba(0, 0, 0, 0.8)">
       <h1 class="post-title">{{ page.title }}</h1>
       <div class="w3-contatiner w3-center post-author">
-        {% if page.author %}written by: <a href="https://lukehod.net/about">{{ page.author }}</a> {% endif %}
+        {% if page.author %}written by: <a href="https://lukehod.net/about">{{ page.author }}</a> // {{ page.date | date: "%B %e, %Y" }}{% endif %}
       </div>
     </div>
   </header>
@@ -17,9 +17,8 @@ layout: page
     {{ content }}
   </div>
 
-  <div class="w3-container date w3-right-align">
-    Written on {{ page.date | date: "%B %e, %Y" }}
-  </div>
+
+  {% include social-share.html %}
 
   <br>
 

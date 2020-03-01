@@ -1,0 +1,28 @@
+---
+layout: default
+permalink: /contact
+---
+<div class="w3-display-container w3-dark-grey contact">
+  {% include nav.html %}
+  <!-- Nav Button -->
+  <div class="w3-display-topleft w3-padding-large w3-xlarge" onclick="openNav()">
+    <button class="w3-margin-top w3-button w3-black w3-xlarge">☰</button>
+  </div>
+
+  <!-- Contact Card -->
+  <div class="w3-display-middle w3-card-4 w3-light-grey w3-mobile" style="width:60%; margin-left: 100px">
+    <header class="w3-container w3-black">
+      <h1 class="w3-text-white w3-xxxlarge"><span id="typed"></span></h1>
+      <div id="typed-strings">
+        <p>&nbsp;Let's connect!</p>
+      </div>
+    </header>
+    <ul class="w3-ul w3-xxlarge w3-white w3-hoverable">
+      {% if site.social-links.email %}<li>&nbsp;<i class="fas fa-envelope-open-text"></i> &emsp; <a href="mailto:{{ site.social-links.email }}">{{ site.social-links.email }}</a></li>{% endif %}
+      {% if site.social-links.github %}<li>&nbsp;<i class="fab fa-github"></i> &emsp; <a href="https://github.com/{{ site.social-links.github }}">github</a></li>{% endif %}
+      {% if site.social-links.stackoverflow %}<li>&nbsp;<i class="fab fa-stack-overflow"></i> &emsp;&nbsp; <a href="http://stackoverflow.com/{{ site.social-links.stackoverflow }}">stack overflow</a></li>{% endif %}
+      {% if site.social-links.instagram %}<li>&nbsp;<i class="fab fa-instagram"></i> &emsp;&nbsp; <a href="https://instagram.com/{{ site.social-links.instagram }}">instagram</a></li>{% endif %}
+    </ul>
+
+  </div>
+</div>

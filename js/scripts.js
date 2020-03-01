@@ -4,9 +4,9 @@
  *      after load screen fades away
  */
 function startPage(){
+  $("#loadScreen").fadeOut("slow"); // fade away load screen
   vantaConfig();                    // vanta.js start
   typedConfig();                    // typed.js start
-  $("#loadScreen").fadeOut("slow"); // fade away load screen
 }
 
 /*
@@ -25,31 +25,41 @@ function closeNav() {
 }
 
 /*
+ *    Script to add year to copyright
+ */
+var year = new Date();
+document.getElementById("year").innerHTML = year.getFullYear();
+
+/*
  *    Vanta.js background animation
  */
 function vantaConfig(){
-  VANTA.DOTS({
-    el: "#mainbg",
-    mouseControls: true,
-    touchControls: true,
-    minHeight: 200.00,
-    minWidth: 200.00,
-    scale: 1.00,
-    scaleMobile: 1.00,
-    showLines: false
-  })
+  if (document.getElementById("mainbg")) { // check if page is using Vanta
+    VANTA.DOTS({
+      el: "#mainbg",
+      mouseControls: true,
+      touchControls: true,
+      minHeight: 200.00,
+      minWidth: 200.00,
+      scale: 1.00,
+      scaleMobile: 1.00,
+      showLines: false
+    })
+  }
 }
 
 /*
- *    type.js configuration
+ *    Type.js configuration
  */
- function typedConfig() {
-     var options = {
-    stringsElement: '#typed-strings',
-    typeSpeed: 50,
-    backSpeed: 30,
-    cursorChar: '_'
-  };
+function typedConfig() {
+  if (document.getElementById("typed")) { // check if page is using Type.js
+    var options = {
+      stringsElement: '#typed-strings',
+      typeSpeed: 50,
+      backSpeed: 30,
+      cursorChar: '_'
+    };
 
-  var typed = new Typed('#typed', options);
+    var typed = new Typed('#typed', options);
+  }
 }
