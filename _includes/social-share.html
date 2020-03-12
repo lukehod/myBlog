@@ -1,0 +1,8 @@
+<!-- social sharing icons -->
+<div class="w3-bar w3-right" style="margin-right: 20px; margin-bottom: 15px">
+  <div class="w3-bar-item w3-dark-grey">share this post: </div>
+  {% if site.share-button.facebook %}<a href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ page.url }}" class="w3-bar-item w3-button w3-dark-grey"><i class="fab fa-facebook"></i></a>{% endif %}
+  {% if site.share-button.twitter %}<a href="https://twitter.com/home?status={{ site.url }}{{ page.url }} {{ page.title }}" class="w3-bar-item w3-button w3-dark-grey"><i class="fab fa-twitter"></i></a>{% endif %}
+  {% if site.share-button.linkedin %}<a href="https://www.linkedin.com/shareArticle?mini=true&url={{ site.url }}{{ page.url }}&title={{ page.title }}&summary=&source=" class="w3-bar-item w3-button w3-dark-grey"><i class="fab fa-linkedin"></i></a>{% endif %}
+  {% if site.share-button.email %}<a href="mailto:?&subject=&body={{ page.title }}%0D%0A%0D%0A{{ site.url }}{{ page.url }}" class="w3-bar-item w3-button w3-dark-grey" target="_blank"><i class="fas fa-envelope"></i></a>{% endif %}
+</div>
